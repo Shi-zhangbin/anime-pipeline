@@ -1,0 +1,25 @@
+{
+  "comment": "Character reference image manifest. URLs point to stable OBS objects.",
+  "characters": {
+    "ascend-chan": {
+      "fullbody-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/fullbody-default.jpg",
+      "halfbody-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/halfbody-default.jpg",
+      "pose-side": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/pose-side.jpg",
+      "avatar-default": "",
+      "icon-minimal": ""
+    },
+    "kunpeng-kun": {
+      "fullbody-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/fullbody-default.jpg",
+      "halfbody-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/halfbody-default.jpg",
+      "pose-side": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/pose-side.jpg",
+      "avatar-default": "",
+      "icon-minimal": ""
+    }
+  },
+  "scene_ref_presets": {
+    "wide": ["fullbody-default", "halfbody-default", "pose-side"],
+    "dialogue": ["halfbody-default", "fullbody-default", "avatar-default"],
+    "closeup": ["avatar-default", "halfbody-default", "fullbody-default"],
+    "icon": ["icon-minimal", "avatar-default", "fullbody-default"]
+  }
+}
