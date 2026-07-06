@@ -1,0 +1,17 @@
+.env
+*.env.local
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+outputs/
+characters/outputs/
+
+.DS_Store
+*.log
+
+.vscode/
+.idea/
