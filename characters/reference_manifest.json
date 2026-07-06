@@ -8,6 +8,7 @@
       "pose-back": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/pose-back.jpg",
       "turnaround-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/turnaround-sheet.jpg",
       "expression-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/expression-sheet.jpg",
+      "pose-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/pose-sheet.jpg",
       "avatar-default": "",
       "icon-minimal": ""
     },
@@ -18,12 +19,14 @@
       "pose-back": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/pose-back.jpg",
       "turnaround-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/turnaround-sheet.jpg",
       "expression-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/expression-sheet.jpg",
+      "pose-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/pose-sheet.jpg",
       "avatar-default": "",
       "icon-minimal": ""
     }
   },
   "scene_ref_presets": {
-    "wide": ["turnaround-sheet", "fullbody-default", "pose-side"],
+    "wide": ["turnaround-sheet", "pose-sheet", "fullbody-default"],
+    "action": ["pose-sheet", "turnaround-sheet", "fullbody-default"],
     "dialogue": ["expression-sheet", "halfbody-default", "fullbody-default"],
     "closeup": ["expression-sheet", "halfbody-default", "fullbody-default"],
     "icon": ["icon-minimal", "fullbody-default"]
