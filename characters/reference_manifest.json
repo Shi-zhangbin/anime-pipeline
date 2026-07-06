@@ -5,6 +5,9 @@
       "fullbody-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/fullbody-default.jpg",
       "halfbody-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/halfbody-default.jpg",
       "pose-side": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/pose-side.jpg",
+      "pose-back": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/pose-back.jpg",
+      "turnaround-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/turnaround-sheet.jpg",
+      "expression-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/expression-sheet.jpg",
       "avatar-default": "",
       "icon-minimal": ""
     },
@@ -12,14 +15,17 @@
       "fullbody-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/fullbody-default.jpg",
       "halfbody-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/halfbody-default.jpg",
       "pose-side": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/pose-side.jpg",
+      "pose-back": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/pose-back.jpg",
+      "turnaround-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/turnaround-sheet.jpg",
+      "expression-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/expression-sheet.jpg",
       "avatar-default": "",
       "icon-minimal": ""
     }
   },
   "scene_ref_presets": {
-    "wide": ["fullbody-default", "halfbody-default", "pose-side"],
-    "dialogue": ["halfbody-default", "fullbody-default", "avatar-default"],
-    "closeup": ["avatar-default", "halfbody-default", "fullbody-default"],
-    "icon": ["icon-minimal", "avatar-default", "fullbody-default"]
+    "wide": ["turnaround-sheet", "fullbody-default", "pose-side"],
+    "dialogue": ["expression-sheet", "halfbody-default", "fullbody-default"],
+    "closeup": ["expression-sheet", "halfbody-default", "fullbody-default"],
+    "icon": ["icon-minimal", "fullbody-default"]
   }
 }
