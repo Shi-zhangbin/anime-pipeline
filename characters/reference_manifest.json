@@ -9,6 +9,9 @@
       "turnaround-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/turnaround-sheet.jpg",
       "expression-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/expression-sheet.jpg",
       "pose-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/pose-sheet.jpg",
+      "chibi-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/chibi-default.png",
+      "chibi-expression-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/chibi-expression-sheet.png",
+      "chibi-model-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/chibi-model-sheet.png",
       "avatar-default": "",
       "icon-minimal": ""
     },
@@ -20,6 +23,9 @@
       "turnaround-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/turnaround-sheet.jpg",
       "expression-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/expression-sheet.jpg",
       "pose-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/pose-sheet.jpg",
+      "chibi-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/chibi-default.png",
+      "chibi-expression-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/chibi-expression-sheet.png",
+      "chibi-model-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/chibi-model-sheet.png",
       "avatar-default": "",
       "icon-minimal": ""
     }
@@ -29,6 +35,7 @@
     "action": ["pose-sheet", "turnaround-sheet", "fullbody-default"],
     "dialogue": ["expression-sheet", "halfbody-default", "fullbody-default"],
     "closeup": ["expression-sheet", "halfbody-default", "fullbody-default"],
-    "icon": ["icon-minimal", "fullbody-default"]
+    "icon": ["icon-minimal", "fullbody-default"],
+    "chibi": ["chibi-model-sheet", "chibi-expression-sheet", "chibi-default"]
   }
 }
