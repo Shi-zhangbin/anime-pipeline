@@ -1,0 +1,118 @@
+# characters/roles.yaml
+# 昇腾酱 & 鲲鹏君 的集中式角色资料入口。
+# 用于生成脚本快速引用外貌、性格、口头禅、同框规则等关键信息。
+# 详细设定请参见同目录下的 Markdown 角色设定文档。
+
+world:
+  name: 计算联邦
+  name_en: Compute Federation
+  summary: >
+    由各种计算架构组成的次元世界。通用计算的广度 + AI 算力的深度 = 无限可能。
+
+characters:
+  ascend-chan:
+    id: ascend-chan
+    name_cn: 昇腾酱
+    name_en: Ascend-chan
+    role_title: AI 算力小妹
+    positioning: AI 训练 / 模型推理 / 神经网络加速 / 专用 AI 算力
+    age: 外表约 18 岁
+    height: 162 cm
+    colors:
+      primary: "#6C2BD9"
+      highlight: "#8E4BFF"
+      shadow: "#4F1A9E"
+      accent: "#FF6B35"
+      data_teal: "#00D4AA"
+    elements: [光, 电, 神经网络]
+    appearance_prompt: >
+      chibi anime girl, purple twin tails with neon orange gradient tips,
+      heterochromatic eyes left purple right orange, glowing neural network pattern on chest,
+      purple tech battle suit with orange accents, three tiny floating AI core drones around her,
+      sparkling data particles in hair, energetic cute style
+    personality:
+      - 天才少女
+      - 热情元气
+      - 好胜心强
+      - 跳脱执着
+      - 赤子心性
+    tone: 聪明、灵气、热血、有点臭屁的天才少女
+    catchphrases:
+      - "让我来！一秒搞定！"
+      - "算力即正义！"
+      - "训练？推理？全都交给我！"
+      - "鲲鹏君，帮我降降温啦～"
+      - "GPU 能做到的，我只会做得更好。"
+    abilities:
+      - 神经元风暴
+      - 思维加速
+      - 模型具现化
+      - 昇腾领域
+      - AI 全栈精通
+    relationship: >
+      与鲲鹏君是最佳搭档 / 计算联邦里的兄妹组合。
+      鲲鹏君负责通用计算底座和稳定承载，昇腾酱负责在其上释放神经网络风暴。
+    solo_layout_hint: 角色居中或偏右下，偏左下留给标题/图表区
+    duo_position: right  # 与鲲鹏君同框时居右，占画面 45%
+    forbidden_poses:
+      - 低头、蹲坐、退缩
+      - 冷漠、无视、背对镜头
+      - '"嘘声"/安静手势'
+      - 与鲲鹏君背对背
+
+  kunpeng-kun:
+    id: kunpeng-kun
+    name_cn: 鲲鹏君
+    name_en: Kunpeng-kun
+    role_title: 通用计算大哥
+    positioning: CPU 通用计算 / 数据处理 / 云计算底座 / 企业级稳定承载
+    age: 外表约 20 岁
+    height: 185 cm
+    colors:
+      primary: "#0A3D62"
+      highlight: "#0D5E8A"
+      shadow: "#062240"
+      silver: "#E8ECEF"
+      data_blue: "#1A8FBF"
+    elements: [风, 云, 海洋]
+    appearance_prompt: >
+      chibi anime boy, short silver-white hair with wing-shaped tips,
+      deep sea blue eyes calm and piercing,
+      deep sea blue tech long coat with silver roc-wing embroidery on shoulders,
+      translucent waist ribbon with flowing data particles,
+      pair of semi-transparent data wings folded in V shape on back,
+      reliable cool style
+    personality:
+      - 兜底老大哥
+      - 沉稳可靠
+      - 兼容并蓄
+      - 少说多做
+      - 护短担当
+    tone: 沉稳、可靠、有担当的兜底型老大哥
+    catchphrases:
+      - "交给我，稳的。"
+      - "海量数据？不过是沧海一粟。"
+      - "慢即是快，稳才能远。"
+      - "别急，先想清楚再动手。"
+    abilities:
+      - 万流归海
+      - 鹏翼遮天
+      - 深潜
+      - 通用计算精通
+    relationship: >
+      与昇腾酱是最佳搭档 / 计算联邦里的兄妹组合。
+      他负责数据预处理、通用计算底座和稳定承载，让昇腾酱能放心释放 AI 算力。
+    solo_layout_hint: 角色居中或偏左下，偏右下留给标题/图表区
+    duo_position: left  # 与昇腾酱同框时居左，占画面 45%
+    forbidden_poses:
+      - 大幅跳跃、腾空翻腾
+      - 夸张表情（大笑、大哭、暴怒）
+      - 背对镜头
+      - 指向观众的攻击性手势
+
+duo:
+  layout_rule: >
+    鲲鹏君居左（画面 45%），昇腾酱居右（画面 45%），中间 10% 留白空隙。
+  combo_skill: 鲲鹏昇腾·智算苍穹
+  dynamic: >
+    一个管"通算基座"，一个管"AI 加速"；一个沉稳托底，一个爆发输出。

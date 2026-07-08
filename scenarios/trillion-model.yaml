@@ -1,0 +1,56 @@
+# scenarios/trillion-model.yaml
+# 《计算联邦日常》第1话：万亿参数大模型
+# 这是竖屏/横屏共用的剧情脚本，可被 scripts/generate_chibi_comic.py 读取。
+
+id: trillion-model
+episode: 第1话
+title: "计算联邦日常 · 第1话"
+characters:
+  - ascend-chan
+  - kunpeng-kun
+refs:
+  - chibi-model-sheet
+
+# 默认横屏；生成时可用 --layout portrait 覆盖为竖屏
+layout: landscape
+size: "16:9"
+
+prompt:
+  style: "Japanese manga comic page, clean chibi anime style, bold outlines, soft cel-shading, no text, no speech bubbles, leave empty areas for captions."
+  base: "Same two chibi characters consistently across all panels, super deformed big heads small bodies. Kunpeng-kun on left silver-white hair deep blue coat small data wings, Ascend-chan on right purple twin tails orange gradient tips tiny AI drones."
+  landscape_grid: "2 rows by 3 columns, right-to-left reading order, clean black panel borders, white gutters."
+  portrait_grid: "3 rows by 2 columns, right-to-left reading order, clean black panel borders, white gutters."
+  panels:
+    - "Panel 1: both characters standing together on a cloud data platform, heroic intro pose, bright sparkles, data particles floating around."
+    - "Panel 2: Ascend-chan close-up winking confidently with one hand on hip, cheerful energetic expression, tiny AI drones hovering."
+    - "Panel 3: Kunpeng-kun close-up arms crossed, calm reliable gentle smile, semi-transparent data wings folded behind."
+    - "Panel 4: Ascend-chan dynamic action pose with orange neuron energy aura, excited shouting expression, tiny AI drones flying around."
+    - "Panel 5: Kunpeng-kun spreading semi-transparent blue data wings wide, forming a stable platform, protective stance."
+    - "Panel 6: both characters high-fiving, Ascend-chan jumping with joy, Kunpeng-kun smiling warmly, sparkles and data particles."
+
+# 面板文字内容，按阅读顺序排列（右→左，上→下）
+content:
+  - type: narration
+    text: "在计算联邦，有一对最佳搭档——\n通用计算大哥鲲鹏君 和 AI算力小妹昇腾酱。"
+    pos: top
+  - type: speech
+    speaker: ascend-chan
+    text: "让我来！万亿参数大模型，\n一秒搞定！"
+    pos: bottom
+  - type: speech
+    speaker: kunpeng-kun
+    text: "别急，先想清楚再动手。"
+    pos: bottom
+  - type: speech
+    speaker: ascend-chan
+    text: "算力即正义！训练？推理？\n全都交给我！"
+    pos: top
+  - type: speech
+    speaker: kunpeng-kun
+    text: "交给我，稳的。"
+    pos: top
+  - type: speech
+    speaker: ascend-chan
+    text: "赢了！我果然是最强的！"
+    pos: top
+    extra: "鲲鹏君：嗯，你最行。"

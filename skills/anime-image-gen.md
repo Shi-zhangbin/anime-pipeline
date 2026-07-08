@@ -1,6 +1,6 @@
 ---
 name: anime-image-gen
-description: 使用 wuyinkeji API 生成图片，并支持先上传参考图到华为云 OBS，再用参考图 URL 调用 wuyinkeji 生成高一致性角色/风格图片。
+description: 使用 wuyinkeji API 生成图片，支持先上传参考图到华为云 OBS 再用参考图 URL 调用 wuyinkeji 生成高一致性角色/风格图片；也支持基于 scenario YAML 批量生成 Q版双人漫画页。
 ---
 
 # Anime Image Gen · 二次元图片生成技能
@@ -9,6 +9,7 @@ description: 使用 wuyinkeji API 生成图片，并支持先上传参考图到�
 
 1. **纯文生图**：直接调用 wuyinkeji API 生成图片。
 2. **参考图生图**：把本地参考图上传到 OBS 拿到公开 URL，再传给 wuyinkeji 作为参考，生成风格/角色一致的新图片。
+3. **Q版双人漫画页**：读取 `scenarios/*.yaml` 剧情脚本，自动生成横屏（16:9）或竖屏（9:16）6 格日漫页面，并用 PIL 叠加标题、对白气泡和旁白。
 
 ## 前置依赖
 
@@ -26,7 +27,7 @@ OBS_DOMAIN=your_bucket_here.obs.ap-southeast-1.myhuaweicloud.com
 Python 依赖：
 
 ```bash
-pip install requests python-dotenv esdk-obs-python
+pip install requests python-dotenv esdk-obs-python pyyaml pillow
 ```
 
 ## 工作流
@@ -108,6 +109,48 @@ PYTHONPATH=. python3 -m core.obs list anime-pipeline/
 # 获取公开 URL
 PYTHONPATH=. python3 -m core.obs url anime-pipeline/refs/ref01.jpg
 ```
+
+## 漫画 / 小剧场生成
+
+基于 `scenarios/*.yaml` 剧情脚本生成 6 格 Q版日漫页。
+
+### 横屏 16:9
+
+```bash
+PYTHONPATH=. python3 scripts/generate_chibi_comic.py \
+  --scenario scenarios/trillion-model.yaml \
+  --layout landscape \
+  --date 2026-07-07
+```
+
+### 竖屏 9:16
+
+```bash
+PYTHONPATH=. python3 scripts/generate_chibi_comic.py \
+  --scenario scenarios/trillion-model.yaml \
+  --layout portrait \
+  --date 2026-07-07
+```
+
+### 输出结构
+
+```
+outputs/chibi_comic/<scenario>/<YYYY-MM-DD>_<layout>/
+├── base.png          # wuyinkeji 原始底图
+├── page.png          # 加过分镜框、气泡、文字的成品
+└── page.json         # 分镜元数据、台词
+```
+
+### 新增一话
+
+复制 `scenarios/trillion-model.yaml`，修改：
+
+- `id`: 主题目录名
+- `title`: 页面标题
+- `prompt.panels`: 6 个 panel 的画面描述
+- `content`: 6 个 panel 的台词/旁白（按右→左、上→下阅读顺序）
+
+`content` 中 `speaker` 使用角色 id（`ascend-chan` / `kunpeng-kun`），脚本会自动映射为中文名。
 
 ## 错误处理
 
