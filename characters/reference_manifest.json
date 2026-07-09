@@ -2,40 +2,63 @@
   "comment": "Character reference image manifest. URLs point to stable OBS objects.",
   "characters": {
     "ascend-chan": {
-      "fullbody-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/fullbody-default.jpg",
-      "halfbody-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/halfbody-default.jpg",
-      "pose-side": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/pose-side.jpg",
-      "pose-back": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/pose-back.jpg",
-      "turnaround-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/turnaround-sheet.jpg",
-      "expression-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/expression-sheet.jpg",
-      "pose-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/pose-sheet.jpg",
-      "chibi-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/chibi-default.png",
-      "chibi-expression-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/chibi-expression-sheet.png",
-      "chibi-model-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/ascend-chan/chibi-model-sheet.png",
+      "fullbody-default": "",
+      "halfbody-default": "",
+      "pose-side": "",
+      "pose-back": "",
+      "turnaround-sheet": "",
+      "expression-sheet": "",
+      "pose-sheet": "",
+      "chibi-default": "",
+      "chibi-expression-sheet": "",
+      "chibi-model-sheet": "",
       "avatar-default": "",
       "icon-minimal": ""
     },
     "kunpeng-kun": {
-      "fullbody-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/fullbody-default.jpg",
-      "halfbody-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/halfbody-default.jpg",
-      "pose-side": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/pose-side.jpg",
-      "pose-back": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/pose-back.jpg",
-      "turnaround-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/turnaround-sheet.jpg",
-      "expression-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/expression-sheet.jpg",
-      "pose-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/pose-sheet.jpg",
-      "chibi-default": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/chibi-default.png",
-      "chibi-expression-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/chibi-expression-sheet.png",
-      "chibi-model-sheet": "https://cdn-szb-hk-obs.obs.ap-southeast-1.myhuaweicloud.com/anime-pipeline/characters/kunpeng-kun/chibi-model-sheet.png",
+      "fullbody-default": "",
+      "halfbody-default": "",
+      "pose-side": "",
+      "pose-back": "",
+      "turnaround-sheet": "",
+      "expression-sheet": "",
+      "pose-sheet": "",
+      "chibi-default": "",
+      "chibi-expression-sheet": "",
+      "chibi-model-sheet": "",
       "avatar-default": "",
       "icon-minimal": ""
     }
   },
   "scene_ref_presets": {
-    "wide": ["turnaround-sheet", "pose-sheet", "fullbody-default"],
-    "action": ["pose-sheet", "turnaround-sheet", "fullbody-default"],
-    "dialogue": ["expression-sheet", "halfbody-default", "fullbody-default"],
-    "closeup": ["expression-sheet", "halfbody-default", "fullbody-default"],
-    "icon": ["icon-minimal", "fullbody-default"],
-    "chibi": ["chibi-model-sheet", "chibi-expression-sheet", "chibi-default"]
+    "wide": [
+      "turnaround-sheet",
+      "pose-sheet",
+      "fullbody-default"
+    ],
+    "action": [
+      "pose-sheet",
+      "turnaround-sheet",
+      "fullbody-default"
+    ],
+    "dialogue": [
+      "expression-sheet",
+      "halfbody-default",
+      "fullbody-default"
+    ],
+    "closeup": [
+      "expression-sheet",
+      "halfbody-default",
+      "fullbody-default"
+    ],
+    "icon": [
+      "icon-minimal",
+      "fullbody-default"
+    ],
+    "chibi": [
+      "chibi-model-sheet",
+      "chibi-expression-sheet",
+      "chibi-default"
+    ]
   }
 }
