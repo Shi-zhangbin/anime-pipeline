@@ -85,6 +85,9 @@ PYTHONPATH=. python3 scripts/generate_with_reference.py \
 # OBS 上传
 PYTHONPATH=. python3 -m core.obs upload /path/to/ref.jpg anime-pipeline/refs/ref01.jpg
 
+# 设置 OBS 自动删除（3 天后清理 anime-pipeline/ 前缀下对象）
+PYTHONPATH=. python3 -m core.obs set-lifecycle anime-pipeline/ 3
+
 # Q版双人漫画（横屏 16:9）
 PYTHONPATH=. python3 scripts/generate_chibi_comic.py \
   --scenario scenarios/trillion-model.yaml \

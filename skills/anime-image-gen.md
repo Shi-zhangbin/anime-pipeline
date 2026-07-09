@@ -108,7 +108,14 @@ PYTHONPATH=. python3 -m core.obs list anime-pipeline/
 
 # 获取公开 URL
 PYTHONPATH=. python3 -m core.obs url anime-pipeline/refs/ref01.jpg
+
+# 设置自动删除（按前缀）
+PYTHONPATH=. python3 -m core.obs set-lifecycle anime-pipeline/ 3
 ```
+
+`set-lifecycle` 会在桶上新增一条生命周期规则：指定前缀下的对象在 N 天后自动删除。例如上面的命令会让 `anime-pipeline/` 前缀下所有对象在 3 天后被 OBS 自动清理，不用手动删。
+
+> 注意：`setBucketLifecycle` 是覆盖桶的生命周期配置，脚本会先读取现有规则、替换/追加同 id 的规则，再写回。不同前缀可以设置多条规则。
 
 ## 漫画 / 小剧场生成
 

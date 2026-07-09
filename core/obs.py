@@ -7,13 +7,14 @@ Usage:
     python3 -m core.obs upload <local_path> <remote_key>
     python3 -m core.obs list [prefix]
     python3 -m core.obs url <remote_key>
+    python3 -m core.obs set-lifecycle <prefix> <days>
 """
 import os
 import sys
 import logging
 from typing import Optional
 
-from obs import ObsClient
+from obs import ObsClient, Rule, Lifecycle, Expiration
 from core.config import (
     OBS_ACCESS_KEY_ID,
     OBS_SECRET_ACCESS_KEY,
@@ -184,6 +185,55 @@ def upload_reference(local_path: str, remote_key: str) -> Optional[str]:
     return url
 
 
+def get_lifecycle_rules(client: ObsClient, bucket_name: str) -> list[Rule]:
+    """Get existing lifecycle rules from bucket."""
+    try:
+        resp = client.getBucketLifecycle(bucketName=bucket_name)
+        if resp.status >= 300:
+            logger.warning(f"Failed to get lifecycle rules (status {resp.status})")
+            return []
+        return list(getattr(resp.body, "lifecycle_config", None) or [])
+    except Exception as e:
+        logger.warning(f"Could not fetch lifecycle rules: {e}")
+        return []
+
+
+def set_lifecycle_rules(client: ObsClient, bucket_name: str, rules: list[Rule]) -> bool:
+    """Replace lifecycle rules on bucket."""
+    try:
+        lifecycle = Lifecycle(rule=rules)
+        resp = client.setBucketLifecycle(bucketName=bucket_name, lifecycle=lifecycle)
+        if resp.status >= 300:
+            logger.error(f"Set lifecycle failed (status {resp.status}): {resp}")
+            return False
+        return True
+    except Exception as e:
+        logger.error(f"Set lifecycle error: {e}")
+        return False
+
+
+def set_auto_delete_prefix(
+    client: ObsClient,
+    bucket_name: str,
+    prefix: str,
+    days: int,
+    rule_id: str = "auto-delete",
+) -> bool:
+    """
+    Add/upsert a lifecycle rule that auto-deletes objects under `prefix`
+    after `days` days.
+    """
+    rules = get_lifecycle_rules(client, bucket_name)
+    # Remove any existing rule with same id to avoid duplicates
+    rules = [r for r in rules if getattr(r, "id", None) != rule_id]
+
+    rule = Rule(id=rule_id, prefix=prefix, status="Enabled")
+    rule.expiration = Expiration(days=days)
+    rules.append(rule)
+
+    return set_lifecycle_rules(client, bucket_name, rules)
+
+
 # ══════════════════════════════════════════════════════════════════
 # CLI
 # ══════════════════════════════════════════════════════════════════
@@ -252,6 +302,36 @@ def _cli_delete_prefix(args: list[str]):
     sys.exit(0 if failed == 0 else 1)
 
 
+def _cli_set_lifecycle(args: list[str]):
+    if len(args) < 2:
+        print("Usage: python3 -m core.obs set-lifecycle <prefix> <days>")
+        print("       python3 -m core.obs set-lifecycle anime-pipeline/ 7")
+        sys.exit(1)
+    prefix = args[0]
+    try:
+        days = int(args[1])
+    except ValueError:
+        print("ERROR: <days> must be an integer")
+        sys.exit(1)
+    if days < 1:
+        print("ERROR: <days> must be >= 1")
+        sys.exit(1)
+
+    client = get_client()
+    if not client:
+        print("ERROR: OBS not configured. Check .env")
+        sys.exit(1)
+
+    rule_id = f"auto-delete-{prefix.rstrip('/').replace('/', '-') or 'all'}"
+    print(f"Setting lifecycle rule: prefix={prefix!r}, days={days}, id={rule_id}")
+    if set_auto_delete_prefix(client, OBS_BUCKET, prefix, days, rule_id=rule_id):
+        print(f"OK: objects under {prefix!r} will be auto-deleted after {days} days")
+        sys.exit(0)
+    else:
+        print("FAILED")
+        sys.exit(1)
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
@@ -265,11 +345,12 @@ def main():
         "url": _cli_url,
         "delete": _cli_delete,
         "delete-prefix": _cli_delete_prefix,
+        "set-lifecycle": _cli_set_lifecycle,
     }
     handler = commands.get(command)
     if not handler:
         print(f"Unknown command: {command}")
-        print("Available: upload, list, url")
+        print("Available: upload, list, url, delete, delete-prefix, set-lifecycle")
         sys.exit(1)
     handler(args)
 
