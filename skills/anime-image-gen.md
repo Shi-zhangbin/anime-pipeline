@@ -62,7 +62,7 @@ PYTHONPATH=. python3 scripts/generate_with_reference.py \
 流程：
 
 1. 读取本地参考图
-2. 上传到 OBS `anime-pipeline/references/<timestamp>.jpg`
+2. 上传到 OBS `动漫制作/references/<timestamp>.jpg`
 3. 拿到公开 URL
 4. 调用 `generate_image(prompt, ref_urls=[url])`
 5. 保存生成结果到 `--out`
@@ -76,7 +76,7 @@ from core.obs import upload_reference
 # 上传参考图
 ref_url = upload_reference(
     "/path/to/ref.jpg",
-    "anime-pipeline/references/my_ref.jpg"
+    "动漫制作/references/my_ref.jpg"
 )
 
 # 带参考图生成
@@ -101,19 +101,19 @@ save_image(img_bytes, "outputs/output.png")
 
 ```bash
 # 上传任意文件到 OBS
-PYTHONPATH=. python3 -m core.obs upload /path/to/ref.jpg anime-pipeline/refs/ref01.jpg
+PYTHONPATH=. python3 -m core.obs upload /path/to/ref.jpg 动漫制作/refs/ref01.jpg
 
 # 列出 OBS 上的对象
-PYTHONPATH=. python3 -m core.obs list anime-pipeline/
+PYTHONPATH=. python3 -m core.obs list 动漫制作/
 
 # 获取公开 URL
-PYTHONPATH=. python3 -m core.obs url anime-pipeline/refs/ref01.jpg
+PYTHONPATH=. python3 -m core.obs url 动漫制作/refs/ref01.jpg
 
 # 设置自动删除（按前缀）
-PYTHONPATH=. python3 -m core.obs set-lifecycle anime-pipeline/ 3
+PYTHONPATH=. python3 -m core.obs set-lifecycle 动漫制作/ 3
 ```
 
-`set-lifecycle` 会在桶上新增一条生命周期规则：指定前缀下的对象在 N 天后自动删除。例如上面的命令会让 `anime-pipeline/` 前缀下所有对象在 3 天后被 OBS 自动清理，不用手动删。
+`set-lifecycle` 会在桶上新增一条生命周期规则：指定前缀下的对象在 N 天后自动删除。例如上面的命令会让 `动漫制作/` 前缀下所有对象在 3 天后被 OBS 自动清理，不用手动删。
 
 > 注意：`setBucketLifecycle` 是覆盖桶的生命周期配置，脚本会先读取现有规则、替换/追加同 id 的规则，再写回。不同前缀可以设置多条规则。
 

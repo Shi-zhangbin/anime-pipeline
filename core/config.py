@@ -1,5 +1,5 @@
 """
-core/config.py — API keys + environment configuration for anime-pipeline
+core/config.py — API keys + environment configuration for 动漫制作
 
 Reads keys from `.env` at project root.
 """

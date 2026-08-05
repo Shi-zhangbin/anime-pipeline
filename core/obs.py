@@ -305,7 +305,7 @@ def _cli_delete_prefix(args: list[str]):
 def _cli_set_lifecycle(args: list[str]):
     if len(args) < 2:
         print("Usage: python3 -m core.obs set-lifecycle <prefix> <days>")
-        print("       python3 -m core.obs set-lifecycle anime-pipeline/ 7")
+        print("       python3 -m core.obs set-lifecycle 动漫制作/ 7")
         sys.exit(1)
     prefix = args[0]
     try:

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "AGENTS.md"
+  ],
+  "permission": {
+    "bash": {
+      "git status*": "allow",
+      "git log*": "allow",
+      "git diff*": "allow",
+      "git branch*": "allow",
+      "git add*": "allow",
+      "git commit*": "ask",
+      "git push*": "ask",
+      "git checkout*": "ask",
+      "ls*": "allow",
+      "file*": "allow",
+      "mkdir*": "allow",
+      "cp*": "allow",
+      "mv*": "ask",
+      "rm*": "ask",
+      "python3 -m py_compile*": "allow",
+      "python3 -m json.tool*": "allow",
+      "python3 -m core.obs*": "allow",
+      "python3 -c *": "allow",
+      "PYTHONPATH=.*python3*": "allow",
+      "python3 core/imagegen.py*": "allow",
+      "python3 scripts/*": "allow",
+      "pip*": "ask",
+      "pip3*": "ask",
+      "brew*": "ask",
+      "gh*": "ask",
+      "*": "ask"
+    },
+    "external_directory": {
+      "~/Documents/**": "allow",
+      "~/Desktop/**": "allow",
+      "~/.agents/**": "allow",
+      "/private/tmp/**": "allow"
+    }
+  }
+}

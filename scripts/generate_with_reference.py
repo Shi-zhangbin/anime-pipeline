@@ -41,7 +41,7 @@ def main():
         print(f"Reference image not found: {args.ref}")
         sys.exit(1)
 
-    remote_key = args.remote_key or f"anime-pipeline/references/{slugify(args.prompt)}/{int(time.time())}.jpg"
+    remote_key = args.remote_key or f"动漫制作/references/{slugify(args.prompt)}/{int(time.time())}.jpg"
     ref_url = upload_reference(str(ref_path), remote_key)
     if not ref_url:
         print("Failed to upload reference image. Aborting.")
