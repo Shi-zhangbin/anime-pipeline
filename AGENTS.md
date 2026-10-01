@@ -47,7 +47,7 @@ PYTHONPATH=. python3 scripts/generate_chibi_comic.py \
 | 漫画排版 | `core/comic_layout.py` |
 | Q版漫画生成 | `scripts/generate_chibi_comic.py` |
 | 漫画剧情脚本 | `scenarios/trillion-model.yaml` |
-| Skill 使用指南 | `skills/anime-image-gen.md` |
+| Skill 使用指南 | `.opencode/skills/anime-image-gen/SKILL.md` |
 
 ## 角色信息
 
@@ -93,8 +93,8 @@ PYTHONPATH=. python3 scripts/generate_chibi_comic.py \
 │   └── generate_chibi_comic.py     # Q版漫画页生成
 ├── scenarios/                  # 漫画剧情脚本（YAML）
 │   └── trillion-model.yaml
-├── skills/                     # Skill 文档
-│   └── anime-image-gen.md
+├── .opencode/skills/           # 项目级 Skill（标准结构）
+│   └── anime-image-gen/
 ├── outputs/                    # 核心生成资产（保留）
 │   ├── chibi/                  # Q版角色
 │   └── refsheets/              # 参考表
